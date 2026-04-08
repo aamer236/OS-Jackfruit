@@ -1,5 +1,3 @@
-<img width="1282" height="223" alt="Screenshot from 2026-04-09 01-30-36" src="https://github.com/user-attachments/assets/79d4daea-8a9d-4cd9-b483-c3823468033f" /># Multi-Container Runtime — OS-Jackfruit
-
 ## 1. Team Information
 
 | Name | SRN |
