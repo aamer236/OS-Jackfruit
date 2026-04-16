@@ -1,11 +1,10 @@
-# Multi-Container Runtime — OS-Jackfruit
 
 ## 1. Team Information
 
 | Name | SRN |
 |------|-----|
-| Vivek Varma | PES1UG24AM070 |
-| Bhuvan Kumar | PES1UG24AM069 |
+| Aamer Khan | PES1UG24AM902 |
+| Dhanush S R | PES1UG24AM083 |
 
 ---
 
@@ -100,39 +99,50 @@ sudo dmesg | tail -5
 ## 3. Demo Screenshots
 
 ### Screenshot 1 — Multi-container supervision
-<img width="1282" height="223" alt="Screenshot from 2026-04-09 01-30-36" src="https://github.com/user-attachments/assets/8b29a4be-030e-4294-86bb-11b6a72c2730" />
+<img width="1420" height="318" alt="WhatsApp Image 2026-04-16 at 10 33 59" src="https://github.com/user-attachments/assets/0d9d5956-284e-403b-aa05-69060a3d6bd1" />
+
 *Two containers alpha and beta started and running under one supervisor process*
 
 ### Screenshot 2 — Metadata tracking
-<img width="898" height="132" alt="Screenshot from 2026-04-09 01-35-08" src="https://github.com/user-attachments/assets/57897788-aba4-47c1-9b62-c9d36826dfe5" />
+<img width="1420" height="318" alt="WhatsApp Image 2026-04-16 at 10 33 59" src="https://github.com/user-attachments/assets/e70e982a-c3b8-4c21-8756-ccd84e00e75a" />
+
 *ps command showing container ID, PID, STATE, SOFT and HARD memory limits*
 
 ### Screenshot 3 — Bounded-buffer logging
-<img width="976" height="942" alt="Screenshot from 2026-04-09 01-35-58" src="https://github.com/user-attachments/assets/60346128-1f58-4948-93d4-2cdba3c07849" />
+<img width="1600" height="477" alt="WhatsApp Image 2026-04-16 at 10 42 29" src="https://github.com/user-attachments/assets/bf93505a-ed9c-4da9-982c-783d80493b3b" />
+
 *Log file contents of alpha container captured through the logging pipeline*
 
 ### Screenshot 4 — CLI and IPC
-<img width="1295" height="97" alt="Screenshot from 2026-04-09 01-39-50" src="https://github.com/user-attachments/assets/8f9fcf0c-cc86-44eb-b15b-fae909abe452" />
+<img width="1600" height="185" alt="WhatsApp Image 2026-04-16 at 11 45 25" src="https://github.com/user-attachments/assets/c276cffc-2598-4e11-846a-360152eeceee" />
+
+
 *stop command sent to supervisor via UNIX domain socket, supervisor responds with SIGTERM confirmation*
 
 ### Screenshot 5 — Soft-limit warning
-<img width="1031" height="33" alt="Screenshot from 2026-04-09 01-45-55" src="https://github.com/user-attachments/assets/36cd4c57-5d7d-496e-a3ef-8c677d936469" />
+<img width="1236" height="212" alt="WhatsApp Image 2026-04-16 at 11 55 13" src="https://github.com/user-attachments/assets/efaa8e4f-7b0e-4123-8d3e-d1f6124a10d0" />
+
+
 *dmesg showing SOFT LIMIT warning when memtest exceeded 20MiB*
 
 ### Screenshot 6 — Hard-limit enforcement
-<img width="1031" height="138" alt="Screenshot from 2026-04-09 01-46-06" src="https://github.com/user-attachments/assets/4ac93058-ea4a-4370-b78b-3b57fab85a4e" />
+<img width="746" height="88" alt="WhatsApp Image 2026-04-16 at 18 26 10" src="https://github.com/user-attachments/assets/95bbd2a2-6431-4abe-86b7-192ec76842f6" />
+
 *dmesg showing HARD LIMIT kill when memtest exceeded 40MiB, ps shows killed state*
 
 ### Screenshot 7a — Scheduling experiment (cpu-high log)
-<img width="613" height="916" alt="Screenshot from 2026-04-09 01-52-10" src="https://github.com/user-attachments/assets/8c5a571a-d618-4134-a417-da199819b8f1" />
+<img width="1092" height="584" alt="WhatsApp Image 2026-04-16 at 18 33 58" src="https://github.com/user-attachments/assets/940e6539-23e5-4fed-b774-bcf594e62df1" />
+
 *cpu-high container running with nice 0, full CFS weight*
 
 ### Screenshot 7b — Scheduling experiment (cpu-low log)
-<img width="999" height="954" alt="Screenshot from 2026-04-09 01-52-30" src="https://github.com/user-attachments/assets/4f4ae71c-3947-4921-806f-69b563fc9dfc" />
+<img width="1600" height="1289" alt="WhatsApp Image 2026-04-16 at 18 34 54" src="https://github.com/user-attachments/assets/4432b148-c119-4cfc-a2ae-d5cfb4ba8d8e" />
+
 *cpu-low container running with nice 10, reduced CFS weight*
 
 ### Screenshot 8 — Clean teardown
-<img width="949" height="339" alt="Screenshot from 2026-04-09 01-55-34" src="https://github.com/user-attachments/assets/f83c4514-ad22-4f0f-9737-155f35d5d65c" />
+<img width="946" height="240" alt="WhatsApp Image 2026-04-16 at 18 39 38" src="https://github.com/user-attachments/assets/94713831-1b73-4ed6-bfe3-1ff072233fc4" />
+
 *No zombie processes, all containers reaped, kernel module unloaded cleanly*
 
 ---
